@@ -1,0 +1,16 @@
+{
+  "name": "thiranex-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack storefront with MySQL-backed products, accounts, and order tracking.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.14.1"
+  }
+}

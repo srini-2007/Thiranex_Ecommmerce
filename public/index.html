@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5f0">
+    <meta name="description" content="Thoughtful things for the everyday. Discover considered homewares, accessories, and small rituals.">
+    <title>Thiranex — The everyday, considered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">A little more lovely, delivered free on orders over $100</div>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Thiranex home">thiranex<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#shop">Shop all</a>
+        <a href="#shop" data-category-link="Home">Home</a>
+        <a href="#shop" data-category-link="Accessories">Accessories</a>
+        <a href="#shop" data-category-link="Wellness">Wellness</a>
+      </nav>
+      <div class="header-actions">
+        <button class="text-button account-button" id="account-button" type="button">Sign in</button>
+        <button class="cart-button" id="cart-jump" type="button" aria-label="View shopping bag">
+          Bag <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">THE SLOWER, SOFTER SIDE OF THINGS</span>
+          <h1>The everyday,<br><em>considered.</em></h1>
+          <p>Thoughtful things for the everyday. Made to be used, loved, and kept close.</p>
+          <a class="button button-dark" href="#shop">Find your everyday <span aria-hidden="true">↗</span></a>
+          <div class="hero-note"><span class="note-mark">✳</span> Considered goods, chosen with care.</div>
+        </div>
+        <div class="hero-image" role="img" aria-label="Sunlit, thoughtfully styled living space">
+          <div class="hero-caption"><span>01 / 04</span><span>A softer kind of home</span></div>
+        </div>
+        <div class="hero-stamp" aria-hidden="true"><span>MADE FOR</span><strong>the little<br>moments</strong><span>✳ EVERY DAY ✳</span></div>
+      </section>
+
+      <section class="trust-strip" aria-label="Our values">
+        <span>✳ &nbsp;Thoughtfully sourced</span><span>✳ &nbsp;Made to last</span><span>✳ &nbsp;A little joy, every day</span>
+      </section>
+
+      <section class="shop-section" id="shop">
+        <div class="section-heading">
+          <div><span class="eyebrow">A FEW GOOD THINGS</span><h2>Small things, <em>big feeling.</em></h2></div>
+          <p>Objects with a little more thought in them. Picked for the way they make the everyday feel.</p>
+        </div>
+        <div class="shop-toolbar">
+          <div class="category-list" id="category-list" aria-label="Filter products"></div>
+          <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Find something..." aria-label="Search products"></label>
+        </div>
+        <p class="status-message" id="store-message" role="status" hidden></p>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="story-section">
+        <div class="story-image" role="img" aria-label="Natural textures and simple home details"></div>
+        <div class="story-copy">
+          <span class="eyebrow">LESS, BUT A LITTLE BETTER</span>
+          <h2>Made for the<br><em>moments in between.</em></h2>
+          <p>A favorite mug. The light at five o’clock. A candle when the day finally slows down. We believe the little things are the big things.</p>
+          <a href="#shop" class="underlined-link">A little more about us <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="story-sparkle" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="journal-strip">
+        <span class="eyebrow">A NOTE FROM US</span>
+        <p>Good things take time. Our latest little letter is about making a ritual of the ordinary.</p>
+        <a href="#shop" class="underlined-link">Read the journal <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="orders-section" id="orders-section" hidden>
+        <div class="section-heading orders-heading">
+          <div><span class="eyebrow">YOUR THIRANEX</span><h2 id="orders-title">Your orders</h2></div>
+          <button class="text-button" id="close-orders" type="button">Back to the shop</button>
+        </div>
+        <div id="orders-list" class="orders-list"></div>
+      </section>
+
+      <section class="admin-section" id="admin-section" hidden>
+        <div class="section-heading orders-heading">
+          <div><span class="eyebrow">STORE MANAGEMENT</span><h2>Order desk</h2></div>
+          <button class="button button-dark" id="add-product-button" type="button">Add a product <span aria-hidden="true">+</span></button>
+        </div>
+        <div id="admin-orders" class="orders-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#">thiranex<span>.</span></a>
+      <p>Good things for the everyday.</p>
+      <span>Made for the little moments. &copy; 2026 Thiranex</span>
+    </footer>
+
+    <aside class="cart-panel" id="cart-panel" aria-label="Shopping bag">
+      <div class="cart-heading"><div><span class="eyebrow">YOUR LITTLE FINDS</span><h2>Your bag <span id="cart-heading-count">(0)</span></h2></div><button id="close-cart" class="icon-button" type="button" aria-label="Close bag">×</button></div>
+      <div class="cart-items" id="cart-items"></div>
+      <p class="cart-empty" id="cart-empty">Your bag is waiting for something lovely.</p>
+      <div class="cart-total"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div>
+      <p class="form-message" id="checkout-message" role="status" hidden></p>
+      <form class="checkout-form" id="checkout-form">
+        <span class="eyebrow">DELIVERY DETAILS</span>
+        <div class="field"><label for="shipping-name">Full name</label><input id="shipping-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="shipping-address">Street address</label><input id="shipping-address" name="address" required autocomplete="street-address"></div>
+        <div class="field-row">
+          <div class="field"><label for="shipping-city">City</label><input id="shipping-city" name="city" required autocomplete="address-level2"></div>
+          <div class="field"><label for="shipping-postal">Postal code</label><input id="shipping-postal" name="postalCode" required autocomplete="postal-code"></div>
+        </div>
+        <button class="button button-dark checkout-button" id="checkout-button" type="submit">Continue to checkout <span aria-hidden="true">↗</span></button>
+        <p class="checkout-note">Secure checkout · Shipping calculated at checkout</p>
+      </form>
+    </aside>
+    <button class="page-scrim" id="page-scrim" type="button" aria-label="Close panel"></button>
+
+    <dialog class="modal" id="auth-dialog">
+      <button class="icon-button modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <span class="eyebrow">WELCOME TO THIRANEX</span>
+      <h2 id="auth-title">A little more you.</h2>
+      <p class="modal-intro" id="auth-intro">Sign in to find your orders and keep your favorites close.</p>
+      <div class="auth-tabs"><button type="button" class="auth-tab active" data-auth-mode="login">Sign in</button><button type="button" class="auth-tab" data-auth-mode="register">Create account</button></div>
+      <form id="auth-form">
+        <div class="field" id="auth-name-field" hidden><label for="auth-name">Your name</label><input id="auth-name" name="name" autocomplete="name"></div>
+        <div class="field"><label for="auth-email">Email address</label><input id="auth-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="auth-password">Password</label><input id="auth-password" name="password" type="password" required minlength="8" autocomplete="current-password"></div>
+        <p class="form-message" id="auth-message" role="status" hidden></p>
+        <button class="button button-dark modal-submit" id="auth-submit" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="modal product-modal" id="product-dialog">
+      <button class="icon-button modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <span class="eyebrow">A GOOD THING FOR THE SHOP</span>
+      <h2 id="product-dialog-title">Add a product</h2>
+      <form id="product-form">
+        <input type="hidden" name="id">
+        <div class="field"><label for="product-name">Product name</label><input id="product-name" name="name" required maxlength="180"></div>
+        <div class="field"><label for="product-description">Description</label><textarea id="product-description" name="description" required rows="3" maxlength="5000"></textarea></div>
+        <div class="field-row">
+          <div class="field"><label for="product-category">Category</label><input id="product-category" name="category" maxlength="80" placeholder="Home"></div>
+          <div class="field"><label for="product-price">Price ($)</label><input id="product-price" name="price" type="number" min="0.01" step="0.01" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="product-stock">Stock</label><input id="product-stock" name="stock" type="number" min="0" step="1" required></div>
+          <div class="field"><label for="product-image">Image URL</label><input id="product-image" name="imageUrl" type="url" placeholder="https://..."></div>
+        </div>
+        <p class="form-message" id="product-message" role="status" hidden></p>
+        <button class="button button-dark modal-submit" type="submit">Save product <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+  </body>
+</html>
